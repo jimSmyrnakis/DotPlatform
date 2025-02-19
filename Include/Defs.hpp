@@ -1,8 +1,22 @@
 #pragma once
 
-#include <stdint.h>
-#include <stddef.h>
+#include <stdio.h>
 
+#if defined(__GNUC__) && defined(__linux__)
+
+    #include <stdint.h>
+
+#elif defined(_MSC_VER) && defined(_WIN32)
+
+    #include <inttypes.h>
+
+#else 
+
+    #error "Not Supported C++ Compiler !!!"
+
+#endif 
+
+#include <stddef.h>
 
 namespace Dot{
     
